@@ -102,7 +102,6 @@ $(document).ready(function(){
       header.classList.remove("sticky");
     }
   }
-
 });
 
 

@@ -1,27 +1,29 @@
 :root {
-  --bg: #3769E2;
+  --bg: #6EC8EE;
   --teal: #3769E2;
   --grey: #bdbdbd;
-  --orange: #ff3d00;
+  --orange: #EF3D65;
+  --pink: #F487AE;
+  --blush: #FCDAD4;
+  --yellow: #FFD52C;
+  --black: rgba(0, 0, 0, 0.85);
+  --babyblue: #B7E0F5;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333;
-  background: #fff;
+  font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   background-color: var(--bg);
+  color: var(--black);
 }
 
 * {
   box-sizing: border-box;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection { /* Code for Firefox  #4170B8 */
     color: white;
     background: black;
 }
@@ -32,24 +34,34 @@ body {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--teal);
+    color: white;
     opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--teal);
+  color: white;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--teal);
+  color: white;
 }
 
 a {
   font-weight: 600;
-  color: var(--orange);
+  color: var(--yellow);
 }
 
-.header_title {
+button {
+  background: var(--blush);
+  border: 2px solid white;
+  color: var(--pink);
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;a
+  cursor: pointer;
+}
+
+.page_title {
   font-size: 1.5em;
   font-weight: 700;
   padding-right: 40px;
@@ -61,7 +73,22 @@ header {
 }
 
 .header--search {
-  padding: 24px;
+  padding: 24px 80px;
+}
+
+#search_icon {
+  display: block;
+  width: 560px;
+  height: 40px;
+  padding: 12px 24px;
+  background: var(--babyblue);
+  border: 2px solid white;
+  font-size: 16px;
+  color: white;
+}
+
+#search_icon:focus {
+  outline: none;
 }
 
 .sticky {
@@ -70,19 +97,8 @@ header {
   width: 100%;
 }
 
-#search_icon {
-  display: block;
-  width: 560px;
-  height: 40px;
-  padding: 12px 24px;
-  margin: 0 auto;
-  border: 2px solid var(--bg);
-  font-size: 17px;
-  background: white;
-}
-
-#search_icon:focus {
-  outline: none;
+.sticky #search_icon {
+  border-color: var(--bg);
 }
 
 .content-info {
@@ -109,22 +125,38 @@ input {
 }
 
 .glyph {
-  width: 240px;
-  padding: 25px 24px;
+  width: 200px;
+  padding: 24px;
   float: left;
-  border: 1px solid white;
+  border: 1px solid var(--bg);
+  background-color: white;
 }
 
 .glyph:hover {
-  border: 1px solid black;
   background: rgba(0,0,0,1);
   color: white;
+}
+
+.mls {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--bg);
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.unit {
+  color: var(--bg);
+  font-weight: 300;
 }
 
 .copy-source-code {
   font-size: 24px;
   display: none;
   cursor: pointer;
+  color: var(--yellow);
 }
 
 .copy-source-code:hover {
@@ -164,23 +196,14 @@ p {
   margin-bottom: 1.5em;
 }
 .mal, .mhl {
-  padding: 2em 6em;
+  padding: 40px 80px;
 }
 .mhmm {
   margin-left: 1em;
   margin-right: 1em;
 }
-.mls {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: var(--grey);
-  font-weight: 600;
-}
 
 .ptl {
-  background-color: white;
 }
 
 .sticky + .ptl {
@@ -192,11 +215,6 @@ p {
 }
 .pvs, .pts {
   padding-top: .25em;
-}
-
-.unit {
-  color: var(--grey);
-  font-weight: 300;
 }
 
 .unitRight {
@@ -249,13 +267,15 @@ footer {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: black;
-  color: var(--teal);
+  background-color: white;
+  border: 2px solid var(--bg);
+  color: var(--bg);
+  border-radius: 2px;
   font-size: 12px;
   padding: 4px 8px;
   position: absolute;
-  z-index: 2;
-  bottom: 120%;
+  z-index: 3;
+  bottom: 130%;
   right: 0;
   opacity: 0;
   transition: opacity 0.3s;
